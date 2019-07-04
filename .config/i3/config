@@ -20,7 +20,7 @@ floating_modifier $mod
 
 bindsym $mod+r mode "resize"
 bindsym $mod+d exec rofi -show run -theme $HOME/.config/rofi/themes/Uni-Dark
-bindsym $mod+z exec scrot '%Y-%m-%d-%R.png' -e 'mv $f ~/pc/Screenshots/'
+bindsym $mod+z exec scrot '%Y-%m-%d-%R.png' -e 'mv $f ~/pc/screenshots/'
 bindsym $mod+mod1+d exec discord
 bindsym $mod+mod1+p exec $brow --private-window
 bindsym $mod+mod1+f exec $brow
