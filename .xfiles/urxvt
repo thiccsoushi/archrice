@@ -1,11 +1,11 @@
-#                          _   
-#                         | |  
-#   _   _ _ ____  ____   _| |_ 
-#  | | | | '__\ \/ /\ \ / / __|
-#  | |_| | |   >  <  \ V /| |_ 
-#   \__,_|_|  /_/\_\  \_/  \__|
-#                              
-# by budrich
+!                          _   
+!                         | |  
+!   _   _ _ ____  ____   _| |_ 
+!  | | | | '__\ \/ /\ \ / / __|
+!  | |_| | |   >  <  \ V /| |_ 
+!   \__,_|_|  /_/\_\  \_/  \__|
+!                              
+! by soushi		 i hate configs 
 
 urxvt*depth: 32
 urxvt*background: [100]#252525
@@ -29,10 +29,6 @@ URxvt*iso14755:            false
 URxvt*iso14755_52:         false
 
 URxvt*font:       xft:Inconsolata:size=10:antialias=true
-URxvt*boldFont:       
-URxvt*italicFont:     
-URxvt*boldItalicFont: 
-
 URxvt.resize-font.smaller: C-j
 URxvt.resize-font.bigger: C-k
 
@@ -50,6 +46,6 @@ URxvt.keysym.M-s: builtin:
 
 URxvt*print-pipe: cat > $(echo /tmp/urxvt-dump.$(date +%Y-%m-%d_%H:%M:%S_%N))
 
-! syntax:ssExcla
-
 URxvt*cutchars: "\"()*,<>[]{}|\'"
+
+! syntax:ssExcla
