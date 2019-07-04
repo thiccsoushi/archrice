@@ -1,0 +1,124 @@
+#   _   _____                    __ _       
+#  (_) |____ |                  / _(_)      
+#   _      / /   ___ ___  _ __ | |_ _  __ _ 
+#  | |     \ \  / __/ _ \| '_ \|  _| |/ _` |
+#  | | .___/ / | (_| (_) | | | | | | | (_| |
+#  |_| \____/   \___\___/|_| |_|_| |_|\__, |
+#                                      __/ |
+#                                     |___/ 
+# by soushi				  comments are bloat
+
+font pango: Inconsolata 10
+
+set $mod Mod4
+set $comp xcompmgr
+set $term urxvt
+set $brow firefox
+set $file ranger 
+
+floating_modifier $mod
+
+bindsym $mod+r mode "resize"
+bindsym $mod+d exec rofi -show run -theme $HOME/.config/rofi/themes/Uni-Dark
+bindsym $mod+z exec scrot '%Y-%m-%d-%R.png' -e 'mv $f ~/pc/Screenshots/'
+bindsym $mod+mod1+d exec discord
+bindsym $mod+mod1+p exec $brow --private-window
+bindsym $mod+mod1+f exec $brow
+bindsym $mod+mod1+s exec spotify
+bindsym $mod+Return exec $term 
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute	     exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86AudioMicMute     exec --no-startup-id pactl set-source-mute 0 toggle
+
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioStop exec playerctl stop
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+bindsym $mod+Shift+h 	     move left
+bindsym $mod+Shift+j 	     move down
+bindsym $mod+Shift+k 	     move up
+bindsym $mod+Shift+l		 move right
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+
+bindsym $mod+Shift+space floating toggle
+
+bindsym $mod+b split h
+bindsym $mod+v split v
+
+bindsym $mod+f fullscreen toggle
+bindsym $mod+q layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+hide_edge_borders both
+default_border pixel 0
+default_floating_border pixel 0
+gaps inner 15
+gaps outer 0
+
+set_from_resource $bg-color		 .background #000000 
+set_from_resource $in-bg-color	 .background #000000
+set_from_resource $text-color	 .foreground #000000
+set_from_resource $in-text-color .foreground #000000 
+set_from_resource $indic		 .color2     #000000
+
+client.focused          $bg-color           $bg-color          $text-color	    	$indic
+client.unfocused        $in-bg-color	    $in-bg-color       $in-text-color	    $indic
+client.focused_inactive $iancative-bg-color $in-bg-color       $in-text-color	    $indic
+client.urgent           $urg-bg-color       $urg-bg-color      $text-color	    	$indic
+
+exec --no-startup-id ~/.fehbg
+exec --no-startup-id $comp
+exec --no-startup-id $HOME/bin/dunst.sh
+exec --no-startup-id $HOME/bin/poly.sh
+exec --no-startup-id xrdb -merge ~/.Xresources
+
+# vim: filetype=i3config

@@ -1,0 +1,25 @@
+#             _ _                    
+#            | (_)                   
+#        __ _| |_  __ _ ___ _ __ ___ 
+#       / _` | | |/ _` / __| '__/ __|
+#   _  | (_| | | | (_| \__ \ | | (__ 
+#  (_)  \__,_|_|_|\__,_|___/_|  \___|
+#                                    
+# by soushi, concept stolen from lukesmith                                    
+
+alias ls='ls --color=auto'
+
+alias wf='sudo wifi-menu'
+
+alias neo='neofetch --ascii $HOME/owoneofetch --disable gpu theme icons'
+
+alias mnt='sudo mount'
+alias umt='sudo umount'
+
+alias p='sudo pacman'
+alias y='yay'
+
+alias fbg='~/.fehbg'
+alias dunst='dunst.sh'
+alias polybar='polybar main'
+alias rofi='rofi -show run -theme $HOME/.config/rofi/themes/Uni-Dark'

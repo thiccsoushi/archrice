@@ -1,0 +1,82 @@
+!      __   __                                            
+!      \ \ / /                                            
+!       \ V / _ __ ___  ___  ___  _   _ _ __ ___ ___  ___ 
+!       /   \| '__/ _ \/ __|/ _ \| | | | '__/ __/ _ \/ __|
+!   _  / /^\ \ | |  __/\__ \ (_) | |_| | | | (_|  __/\__ \
+!  (_) \/   \/_|  \___||___/\___/ \__,_|_|  \___\___||___/
+!                                                         
+! by soushi, concept stolen from budrich                                                         
+
+#define fnt1   Inconsolata
+#define fntsz1   12
+
+#include ".xfiles/xcolors/Tango"
+!#include ".xfiles/xcolors/Google"
+!#include ".xfiles/xcolors/Isotope"
+!#include ".xfiles/xcolors/Valhalla"
+!#include ".xfiles/xcolors/Icered"
+!#include ".xfiles/xcolors/Neon"
+!#include ".xfiles/xcolors/gruvbox"
+!#include ".xfiles/xcolors/solarized-dark"
+
+#include ".xfiles/urxvt"
+
+
+! -------------------------------
+! 	      SYNTAX
+! -------------------------------      
+
+
+! include file (OBS! quotes are important):
+! #include "PATH_RELATIVE_TO_XRESOURCES"
+
+! define variable:
+! #define  VARNAME VALUE
+
+! custom resource:
+! name.class.type: value/variable
+
+! -------------------------------
+
+! commandline commands:
+
+! load xresources:
+! ~/.xinitrc:
+! [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+!
+! ~/.config/i3/config:
+! set $HOME ABSOLUTE_PATH_TO_HOMEFOLDER (/home/bud)
+! exec --no-startup-id xrdb -merge -I$HOME ~/.Xresources
+! exec --no-startup-id exec i3-msg -q restart
+
+! merge new changes:
+! xrdb -merge ~/.Xresources
+
+! replace .Xresources
+! xrdb -load ~/.Xresources
+
+! list current settings in .Xresources:
+! xrdb -query
+
+! list installed fonts:
+! fc-list | grep FONTNAME
+
+! instant font test:
+! printf '\e]710;%s\007' "xft:FONT"
+
+
+! :antialias=false <- if it works for you, its good
+
+! -------------------------------
+
+! use xresource in i3:
+! set_from_resource $VARIABLE  XRESOURCE  DEFAULT_VALUE
+
+! use xresource in polybar:
+! VARNAME = ${xrdb:XRESOURCE:DEFAULT}
+
+! get xresource from script
+! VAR=$(xrdb -query | awk '$1 ~ XRESOURCE":" {print $2}')
+
+! subl --command 'two_face {"face":"solarized-dark"}'
+! syntax:ssExcla
