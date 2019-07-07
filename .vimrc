@@ -5,7 +5,7 @@
 "   _   \ V /| | | | | | | | | (__ 
 "  (_)   \_/ |_|_| |_| |_|_|  \___|
 "                                  
-"                                  
+" by soushi                                  
 
 "plugin manager                                                
 if empty(glob('~/.vim/autoload/plug.vim'))
