@@ -5,9 +5,8 @@
 "   _   \ V /| | | | | | | | | (__ 
 "  (_)   \_/ |_|_| |_| |_|_|  \___|
 "                                  
-" by soushi                                  
+" by soushi			emacs sucks ass
 
-"plugin manager                                                
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -19,7 +18,6 @@ Plug 'mboughaba/i3config.vim'
 Plug 'ap/vim-css-color'
 call plug#end()
 
-"basic config
 set number relativenumber
 set bg=dark
 set nocompatible
@@ -32,6 +30,5 @@ syntax on
 filetype indent plugin on
 colorscheme default
 
-"copying and pasting from sysclip
 vnoremap <C-c> "+y
 map <C-p> "+P
